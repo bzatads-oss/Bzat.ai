@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BZAT.ai — AI Content Generator</title>
+  <meta name="description" content="BZAT.ai helps you create content with AI and publish it everywhere.">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Arial,sans-serif;
+      background:#0b0f19;
+      color:#fff;
+      line-height:1.6;
+    }
+    header{
+      padding:20px 7%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      border-bottom:1px solid #202737;
+    }
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#39ff88;
+    }
+    nav a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:20px;
+    }
+    .hero{
+      text-align:center;
+      padding:90px 20px;
+      max-width:900px;
+      margin:auto;
+    }
+    .hero h1{
+      font-size:55px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+    .hero h1 span{color:#39ff88}
+    .hero p{
+      color:#b8c0d0;
+      font-size:20px;
+      margin-bottom:35px;
+    }
+    .btn{
+      display:inline-block;
+      background:#39ff88;
+      color:#07100b;
+      padding:14px 28px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:bold;
+      margin:5px;
+    }
+    .btn.secondary{
+      background:#171e2c;
+      color:#fff;
+      border:1px solid #303a4f;
+    }
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+      padding:40px 7% 80px;
+    }
+    .card{
+      background:#111827;
+      border:1px solid #202a3c;
+      padding:28px;
+      border-radius:14px;
+    }
+    .card h2{color:#39ff88;margin-bottom:10px}
+    .card p{color:#aeb7c8}
+    .generator{
+      max-width:850px;
+      margin:0 auto 80px;
+      padding:35px;
+      background:#111827;
+      border:1px solid #263248;
+      border-radius:16px;
+    }
+    .generator h2{
+      text-align:center;
+      margin-bottom:20px;
+    }
+    textarea{
+      width:100%;
+      min-height:130px;
+      padding:15px;
+      border-radius:8px;
+      border:1px solid #344158;
+      background:#080d16;
+      color:#fff;
+      resize:vertical;
+      font-size:16px;
+    }
+    button{
+      width:100%;
+      margin-top:15px;
+      padding:14px;
+      border:0;
+      border-radius:8px;
+      background:#39ff88;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+    #output{
+      margin-top:20px;
+      padding:20px;
+      background:#080d16;
+      border-radius:8px;
+      color:#d8deea;
+      min-height:60px;
+    }
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid #202737;
+      color:#8993a6;
+    }
+    @media(max-width:600px){
+      .hero h1{font-size:40px}
+      nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">BZAT.ai</div>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#generator">Generator</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Create <span>Once.</span><br>Publish Everywhere.</h1>
+  <p>
+    BZAT.ai is your AI-powered content creation platform.
+    Turn one idea into powerful content for multiple platforms.
+  </p>
+  <a href="#generator" class="btn">Start Creating</a>
+  <a href="#features" class="btn secondary">Explore Features</a>
+</section>
+
+<section class="features" id="features">
+
+  <div class="card">
+    <h2>✍️ AI Writing</h2>
+    <p>Create articles, captions, posts, scripts and marketing content faster.</p>
+  </div>
+
+  <div class="card">
+    <h2>🎬 Video Content</h2>
+    <p>Generate ideas, hooks, scripts and prompts for short-form videos.</p>
+  </div>
+
+  <div class="card">
+    <h2>📱 Social Media</h2>
+    <p>Transform one idea into content designed for different social platforms.</p>
+  </div>
+
+  <div class="card">
+    <h2>⚡ One Idea</h2>
+    <p>Start with one idea and build an entire content package around it.</p>
+  </div>
+
+</section>
+
+<section class="generator" id="generator">
+  <h2>AI Content Generator</h2>
+
+  <textarea id="idea" placeholder="Enter your content idea..."></textarea>
+
+  <button onclick="generateContent()">Generate Content</button>
+
+  <div id="output">
+    Your generated content will appear here.
+  </div>
+</section>
+
+<footer>
+  © 2026 BZAT.ai — Create Once. Publish Everywhere.
+</footer>
+
+<script>
+function generateContent(){
+  const idea=document.getElementById("idea").value.trim();
+  const output=document.getElementById("output");
+
+  if(!idea){
+    output.innerHTML="Please enter an idea first.";
+    return;
+  }
+
+  output.innerHTML=
+    "<strong>Your Content Idea:</strong><br><br>"+
+    idea+
+    "<br><br><strong>Coming next:</strong> AI-powered generation, social posts, video scripts and platform-ready content.";
+}
+</script>
+
+</body>
+</html>
