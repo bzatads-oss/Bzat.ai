@@ -192,21 +192,52 @@
 </footer>
 
 <script>
-function generateContent(){
-  const idea=document.getElementById("idea").value.trim();
-  const output=document.getElementById("output");
+async function generateContent() {
+  const idea = document.getElementById("idea").value.trim();
+  const output = document.getElementById("output");
 
-  if(!idea){
-    output.innerHTML="Please enter an idea first.";
+  if (!idea) {
+    output.innerHTML = "Please enter an idea first.";
     return;
   }
 
-  output.innerHTML=
-    "<strong>Your Content Idea:</strong><br><br>"+
-    idea+
-    "<br><br><strong>Coming next:</strong> AI-powered generation, social posts, video scripts and platform-ready content.";
+  output.innerHTML = "⏳ BZAT AI is generating...";
+
+  try {
+    const response = await fetch(
+      "https://bzat82912.workers.dev",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          prompt:
+            "Create a high-quality content package from this idea. Include a title, engaging article/post, social media captions, and a short video script. Idea: " +
+            idea
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "AI request failed");
+    }
+
+    const text =
+      data.candidates?.[0]?.content?.parts?.[0]?.text;
+
+    if (!text) {
+      throw new Error("No AI response received.");
+    }
+
+    output.innerHTML = text.replace(/\n/g, "<br>");
+  } catch (error) {
+    output.innerHTML =
+      "❌ BZAT AI Error: " + error.message;
+  }
 }
 </script>
-
 </body>
 </html>
