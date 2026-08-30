@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bzatads-oss.github.io/Bzat.ai/sitemap.xml
