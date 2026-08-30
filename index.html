@@ -175,74 +175,1828 @@
   </div>
 
 </section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
-<section class="generator" id="generator">
-  <h2>AI Content Generator</h2>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <textarea id="idea" placeholder="Enter your content idea..."></textarea>
+  <title>BZAT.ai — AI Content Generator for TikTok, Reels & YouTube Shorts</title>
 
-  <button onclick="generateContent()">Generate Content</button>
+  <meta
+    name="description"
+    content="BZAT.ai is an AI content generator that turns one idea into ready-to-use TikTok, Instagram Reels and YouTube Shorts content. Create hooks, scripts, captions, hashtags and AI video prompts."
+  >
 
-  <div id="output">
-    Your generated content will appear here.
-  </div>
-</section>
+  <meta
+    name="keywords"
+    content="AI content generator, AI video generator, TikTok content generator, Instagram Reels generator, YouTube Shorts generator, AI script generator, AI video prompts, social media content generator"
+  >
 
-<footer>
-  © 2026 BZAT.ai — Create Once. Publish Everywhere.
-</footer>
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
-<script>
-async function generateContent() {
-  const idea = document.getElementById("idea").value.trim();
-  const output = document.getElementById("output");
+  <meta name="author" content="BZAT.ai">
 
-  if (!idea) {
-    output.innerHTML = "Please enter an idea first.";
-    return;
+  <link
+    rel="canonical"
+    href="https://bzatads-oss.github.io/Bzat.ai/"
+  >
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BZAT.ai — AI Content Generator">
+  <meta
+    property="og:description"
+    content="Turn one idea into TikTok, Instagram Reels and YouTube Shorts content with BZAT.ai."
+  >
+  <meta
+    property="og:url"
+    content="https://bzatads-oss.github.io/Bzat.ai/"
+  >
+  <meta property="og:site_name" content="BZAT.ai">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="BZAT.ai — AI Content Generator"
+  >
+  <meta
+    name="twitter:description"
+    content="Create hooks, scripts, captions, hashtags and AI video prompts from one idea."
+  >
+
+  <!-- Google Search Console verification -->
+  <meta
+    name="google-site-verification"
+    content="b1A3tNJkbO8QpzopjCSbcMklotmWY4Dnsoi_ihVgQNw"
+  >
+
+  <!-- Structured Data: Software Application -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BZAT.ai",
+    "url": "https://bzatads-oss.github.io/Bzat.ai/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "BZAT.ai is an AI content generator for creating short-form social media content for TikTok, Instagram Reels and YouTube Shorts.",
+    "offers": [
+      {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Free plan with 3 free video content generations"
+      },
+      {
+        "@type": "Offer",
+        "price": "4.99",
+        "priceCurrency": "USD",
+        "description": "Creator plan with 50 credits"
+      },
+      {
+        "@type": "Offer",
+        "price": "10",
+        "priceCurrency": "USD",
+        "description": "Power Creator plan with 100 credits"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is BZAT.ai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BZAT.ai is an AI content generator that helps creators turn one idea into short-form content for TikTok, Instagram Reels and YouTube Shorts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What can BZAT.ai generate?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BZAT.ai can generate a viral hook, voice-over script, on-screen text, caption, hashtags and an AI video-generation prompt."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use BZAT.ai for YouTube Shorts?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BZAT.ai can create content packages designed for YouTube Shorts, including short scripts, hooks, captions, hashtags and AI video prompts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I create Instagram Reels content with BZAT.ai?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can select Instagram Reels as your platform and generate a short-form content package."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BZAT.ai free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BZAT.ai includes a free plan that lets new users try the content generator before purchasing additional credits."
+        }
+      }
+    ]
+  }
+  </script>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #09090b;
+  color: #ffffff;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+header {
+  border-bottom: 1px solid #27272a;
+  padding: 18px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9, 9, 11, 0.97);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.logo span,
+h1 span,
+.section-title h2,
+.payment-box h2 {
+  color: #a3e635;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: #d4d4d8;
+  text-decoration: none;
+  margin-left: 22px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #a3e635;
+}
+
+.hero {
+  text-align: center;
+  padding: 85px 20px 70px;
+  max-width: 950px;
+  margin: auto;
+}
+
+.badge {
+  display: inline-block;
+  border: 1px solid #3f3f46;
+  border-radius: 30px;
+  padding: 7px 15px;
+  font-size: 13px;
+  color: #bef264;
+  margin-bottom: 22px;
+}
+
+h1 {
+  font-size: clamp(42px, 8vw, 76px);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.hero p {
+  color: #a1a1aa;
+  font-size: 18px;
+  max-width: 720px;
+  margin: auto;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 30px;
+  background: #a3e635;
+  color: #09090b;
+  padding: 14px 27px;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cta:hover {
+  background: #bef264;
+}
+
+.section {
+  padding: 65px 6%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.section-title p {
+  color: #a1a1aa;
+  max-width: 720px;
+  margin: auto;
+}
+
+.intro-content {
+  max-width: 850px;
+  margin: auto;
+  color: #d4d4d8;
+}
+
+.intro-content p {
+  margin-bottom: 18px;
+}
+
+.feature-grid,
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.feature-card,
+.step-card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.feature-card h3,
+.step-card h3 {
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.feature-card p,
+.step-card p {
+  color: #a1a1aa;
+  font-size: 15px;
+}
+
+.feature-icon {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.generator {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+textarea,
+select,
+input {
+  width: 100%;
+  background: #09090b;
+  color: white;
+  border: 1px solid #3f3f46;
+  border-radius: 9px;
+  padding: 13px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+textarea:focus,
+select:focus,
+input:focus {
+  outline: 2px solid #a3e635;
+  outline-offset: 1px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+button {
+  width: 100%;
+  border: none;
+  background: #a3e635;
+  color: #09090b;
+  padding: 14px;
+  border-radius: 9px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background: #bef264;
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+#result {
+  display: none;
+  margin-top: 25px;
+  background: #09090b;
+  border: 1px solid #3f3f46;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+#result h3 {
+  color: #a3e635;
+  margin-bottom: 20px;
+}
+
+.output {
+  margin-bottom: 20px;
+}
+
+.output strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.output p {
+  color: #d4d4d8;
+  white-space: pre-wrap;
+}
+
+.platform-section {
+  text-align: center;
+}
+
+.platform-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.platform-pill {
+  border: 1px solid #3f3f46;
+  background: #18181b;
+  padding: 10px 18px;
+  border-radius: 30px;
+  color: #d4d4d8;
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.price-card {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+}
+
+.price-card.featured {
+  border-color: #a3e635;
+}
+
+.price {
+  font-size: 38px;
+  font-weight: 800;
+  margin: 12px 0;
+}
+
+.price-card p {
+  color: #a1a1aa;
+  margin-bottom: 18px;
+}
+
+.price-card ul {
+  list-style: none;
+  color: #d4d4d8;
+  text-align: left;
+  margin-bottom: 22px;
+}
+
+.price-card li {
+  margin: 8px 0;
+}
+
+.faq {
+  max-width: 850px;
+  margin: auto;
+}
+
+.faq-item {
+  background: #18181b;
+  border: 1px solid #27272a;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 20px;
+}
+
+.faq-item h3 {
+  margin-bottom: 8px;
+  font-size: 17px;
+}
+
+.faq-item p {
+  color: #a1a1aa;
+}
+
+footer {
+  border-top: 1px solid #27272a;
+  text-align: center;
+  padding: 30px 20px;
+  color: #71717a;
+  margin-top: 50px;
+}
+
+.footer-links {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #a1a1aa;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+.footer-links a:hover {
+  color: #a3e635;
+}
+
+/* PAYMENT */
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.82);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.payment-box {
+  width: 100%;
+  max-width: 520px;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 18px;
+  padding: 25px;
+}
+
+.payment-box h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.payment-subtitle {
+  text-align: center;
+  color: #a1a1aa;
+  margin-bottom: 20px;
+}
+
+.selected-plan {
+  text-align: center;
+  background: #09090b;
+  border: 1px solid #3f3f46;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+.selected-plan strong {
+  color: #a3e635;
+  font-size: 22px;
+}
+
+.payment-method {
+  background: #09090b;
+  border: 1px solid #3f3f46;
+  border-radius: 12px;
+  padding: 17px;
+  margin-bottom: 15px;
+}
+
+.payment-method h3 {
+  margin-bottom: 10px;
+}
+
+.detail-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 9px 0;
+}
+
+.detail {
+  flex: 1;
+  background: #18181b;
+  border: 1px solid #3f3f46;
+  border-radius: 7px;
+  padding: 9px;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+
+.copy-btn {
+  width: auto;
+  margin: 0;
+  padding: 9px 12px;
+  font-size: 13px;
+}
+
+.note {
+  background: #27272a;
+  color: #d4d4d8;
+  border-radius: 9px;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 13px;
+}
+
+.close-btn {
+  background: #27272a;
+  color: white;
+  margin-top: 10px;
+}
+
+.close-btn:hover {
+  background: #3f3f46;
+}
+
+.status {
+  display: none;
+  padding: 12px;
+  border-radius: 9px;
+  margin-top: 12px;
+  background: #27272a;
+  color: #bef264;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+  nav {
+    display: none;
   }
 
-  output.innerHTML = "⏳ BZAT AI is generating...";
+  .feature-grid,
+  .steps-grid,
+  .pricing,
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 60px;
+  }
+
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .detail-row {
+    align-items: stretch;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo" aria-label="BZAT.ai">
+    BZAT<span>.ai</span>
+  </div>
+
+  <nav aria-label="Main navigation">
+    <a href="#about">About</a>
+    <a href="#features">Features</a>
+    <a href="#generator">Creator</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="badge">
+    AI-Powered Content Creation
+  </div>
+
+  <h1>
+    AI Content Generator for
+    <span>Every Platform</span>
+  </h1>
+
+  <p>
+    Turn one idea into ready-to-use TikTok, Instagram Reels
+    and YouTube Shorts content with BZAT.ai.
+    Generate viral hooks, scripts, captions, hashtags
+    and AI video prompts in seconds.
+  </p>
+
+  <a class="cta" href="#generator">
+    Create Your First Video
+  </a>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+  <div class="section-title">
+
+    <h2>What Is BZAT.ai?</h2>
+
+    <p>
+      A simple AI content generator built for short-form creators.
+    </p>
+
+  </div>
+
+  <div class="intro-content">
+
+    <p>
+      <strong>BZAT.ai</strong> helps content creators transform a
+      single idea into a complete short-video content package.
+      Instead of writing every part manually, you can generate
+      the essential elements needed to publish short-form content
+      across major social platforms.
+    </p>
+
+    <p>
+      Whether you create educational videos, funny content,
+      storytelling videos, news-style shorts or viral social media
+      content, BZAT.ai helps you move from idea to publishable
+      content faster.
+    </p>
+
+    <p>
+      <strong>Create Once. Publish Everywhere.</strong>
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="section" id="features">
+
+  <div class="section-title">
+
+    <h2>AI Content Creation Features</h2>
+
+    <p>
+      Everything you need to turn an idea into a short-video package.
+    </p>
+
+  </div>
+
+  <div class="feature-grid">
+
+    <article class="feature-card">
+
+      <div class="feature-icon">🪝</div>
+
+      <h3>Viral Hooks</h3>
+
+      <p>
+        Generate attention-grabbing hooks designed to encourage
+        viewers to keep watching your short-form video.
+      </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+      <div class="feature-icon">🎙️</div>
+
+      <h3>AI Voice-over Scripts</h3>
+
+      <p>
+        Create concise scripts suitable for TikTok, Instagram Reels
+        and YouTube Shorts.
+      </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+      <div class="feature-icon">📱</div>
+
+      <h3>On-screen Text</h3>
+
+      <p>
+        Generate short on-screen text ideas that can help communicate
+        your message clearly in vertical videos.
+      </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+      <div class="feature-icon">📢</div>
+
+      <h3>Social Captions</h3>
+
+      <p>
+        Get ready-to-use captions for promoting your short-form
+        videos on social media.
+      </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+      <div class="feature-icon">#️⃣</div>
+
+      <h3>Hashtag Ideas</h3>
+
+      <p>
+        Generate relevant hashtag suggestions for your selected
+        platform and content topic.
+      </p>
+
+    </article>
+
+
+    <article class="feature-card">
+
+      <div class="feature-icon">🎬</div>
+
+      <h3>AI Video Prompts</h3>
+
+      <p>
+        Generate creative prompts that can be used with compatible
+        AI video-generation tools.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- HOW IT WORKS -->
+
+<section class="section">
+
+  <div class="section-title">
+
+    <h2>How BZAT.ai Works</h2>
+
+    <p>
+      Create a short-video content package in three simple steps.
+    </p>
+
+  </div>
+
+  <div class="steps-grid">
+
+    <article class="step-card">
+
+      <h3>1. Enter Your Idea</h3>
+
+      <p>
+        Describe your topic, story, product, news idea or video
+        concept in the Creator Studio.
+      </p>
+
+    </article>
+
+
+    <article class="step-card">
+
+      <h3>2. Choose Your Platform</h3>
+
+      <p>
+        Select TikTok, Instagram Reels or YouTube Shorts and choose
+        the content style and video duration.
+      </p>
+
+    </article>
+
+
+    <article class="step-card">
+
+      <h3>3. Generate Content</h3>
+
+      <p>
+        BZAT.ai creates your hook, script, on-screen text, caption,
+        hashtags and AI video prompt.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- CREATOR -->
+
+<section class="section" id="generator">
+
+  <div class="section-title">
+
+    <h2>🎬 BZAT.ai Creator Studio</h2>
+
+    <p>
+      Enter one idea and generate an AI-powered short-video
+      content package.
+    </p>
+
+  </div>
+
+
+  <div class="generator">
+
+    <label for="topic">
+      Your Topic
+    </label>
+
+    <textarea
+      id="topic"
+      placeholder="Example: 5 AI tools every student should know..."
+      aria-label="Enter your video topic"
+    ></textarea>
+
+
+    <div class="options">
+
+      <div>
+
+        <label for="platform">
+          Platform
+        </label>
+
+        <select id="platform">
+
+          <option>TikTok</option>
+
+          <option>Instagram Reels</option>
+
+          <option>YouTube Shorts</option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label for="style">
+          Content Style
+        </label>
+
+        <select id="style">
+
+          <option>Viral</option>
+
+          <option>Educational</option>
+
+          <option>Funny</option>
+
+          <option>Storytelling</option>
+
+          <option>News</option>
+
+        </select>
+
+      </div>
+
+
+      <div>
+
+        <label for="duration">
+          Video Duration
+        </label>
+
+        <select id="duration">
+
+          <option>15 seconds</option>
+
+          <option>30 seconds</option>
+
+          <option>60 seconds</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <button
+      id="generateButton"
+      type="button"
+      onclick="generateContent()"
+    >
+      ✨ Generate Video Package
+    </button>
+
+
+    <div id="result" aria-live="polite">
+
+      <h3>Generated Content</h3>
+
+
+      <div class="output">
+
+        <strong>🪝 Viral Hook</strong>
+
+        <p id="hook"></p>
+
+      </div>
+
+
+      <div class="output">
+
+        <strong>🎙️ Voice-over Script</strong>
+
+        <p id="script"></p>
+
+      </div>
+
+
+      <div class="output">
+
+        <strong>📱 On-screen Text</strong>
+
+        <p id="onscreen"></p>
+
+      </div>
+
+
+      <div class="output">
+
+        <strong>📢 Caption</strong>
+
+        <p id="caption"></p>
+
+      </div>
+
+
+      <div class="output">
+
+        <strong>#️⃣ Hashtags</strong>
+
+        <p id="hashtags"></p>
+
+      </div>
+
+
+      <div class="output">
+
+        <strong>🎬 AI Video Prompt</strong>
+
+        <p id="prompt"></p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- PLATFORMS -->
+
+<section class="section platform-section">
+
+  <div class="section-title">
+
+    <h2>Create Content for Major Short-Video Platforms</h2>
+
+    <p>
+      Build one content idea and adapt it for the platforms
+      where your audience watches short-form videos.
+    </p>
+
+  </div>
+
+  <div class="platform-list">
+
+    <span class="platform-pill">TikTok</span>
+
+    <span class="platform-pill">Instagram Reels</span>
+
+    <span class="platform-pill">YouTube Shorts</span>
+
+  </div>
+
+</section>
+
+
+<!-- PRICING -->
+
+<section class="section" id="pricing">
+
+  <div class="section-title">
+
+    <h2>Simple BZAT.ai Pricing</h2>
+
+    <p>
+      Start free and purchase additional credits when you need them.
+    </p>
+
+  </div>
+
+
+  <div class="pricing">
+
+
+    <article class="price-card">
+
+      <h3>Free</h3>
+
+      <div class="price">$0</div>
+
+      <p>Try BZAT.ai</p>
+
+      <ul>
+
+        <li>✓ 3 free videos</li>
+
+        <li>✓ TikTok content</li>
+
+        <li>✓ Instagram Reels content</li>
+
+        <li>✓ YouTube Shorts content</li>
+
+      </ul>
+
+      <button
+        type="button"
+        onclick="startFree()"
+      >
+        Start Free
+      </button>
+
+    </article>
+
+
+    <article class="price-card featured">
+
+      <h3>Creator</h3>
+
+      <div class="price">$4.99</div>
+
+      <p>50 video credits</p>
+
+      <ul>
+
+        <li>✓ 50 video credits</li>
+
+        <li>✓ No daily limit</li>
+
+        <li>✓ All platforms</li>
+
+        <li>✓ Creator tools</li>
+
+      </ul>
+
+      <button
+        type="button"
+        onclick="openPayment('Creator','50 Credits','$4.99')"
+      >
+        Get 50 Credits
+      </button>
+
+    </article>
+
+
+    <article class="price-card">
+
+      <h3>Power Creator</h3>
+
+      <div class="price">$10</div>
+
+      <p>100 video credits</p>
+
+      <ul>
+
+        <li>✓ 100 video credits</li>
+
+        <li>✓ No daily limit</li>
+
+        <li>✓ All platforms</li>
+
+        <li>✓ Creator tools</li>
+
+      </ul>
+
+      <button
+        type="button"
+        onclick="openPayment('Power Creator','100 Credits','$10')"
+      >
+        Get 100 Credits
+      </button>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+<!-- FAQ -->
+
+<section class="section" id="faq">
+
+  <div class="section-title">
+
+    <h2>Frequently Asked Questions</h2>
+
+    <p>
+      Learn more about BZAT.ai and its AI content-generation tools.
+    </p>
+
+  </div>
+
+
+  <div class="faq">
+
+
+    <article class="faq-item">
+
+      <h3>What is BZAT.ai?</h3>
+
+      <p>
+        BZAT.ai is an AI content generator that helps creators turn
+        one idea into short-form content for TikTok, Instagram Reels
+        and YouTube Shorts.
+      </p>
+
+    </article>
+
+
+    <article class="faq-item">
+
+      <h3>What can BZAT.ai generate?</h3>
+
+      <p>
+        BZAT.ai can generate a viral hook, voice-over script,
+        on-screen text, caption, hashtags and an AI video-generation
+        prompt.
+      </p>
+
+    </article>
+
+
+    <article class="faq-item">
+
+      <h3>Can I use BZAT.ai for YouTube Shorts?</h3>
+
+      <p>
+        Yes. Select YouTube Shorts in the Creator Studio and generate
+        a short-video content package for your topic.
+      </p>
+
+    </article>
+
+
+    <article class="faq-item">
+
+      <h3>Can I create Instagram Reels content?</h3>
+
+      <p>
+        Yes. Select Instagram Reels as your platform and BZAT.ai
+        will create a suitable short-form content package.
+      </p>
+
+    </article>
+
+
+    <article class="faq-item">
+
+      <h3>Is BZAT.ai free?</h3>
+
+      <p>
+        BZAT.ai includes a free plan that lets new users try the
+        content generator before purchasing additional credits.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- PAYMENT MODAL -->
+
+<div
+  class="modal"
+  id="paymentModal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="paymentTitle"
+>
+
+  <div class="payment-box">
+
+    <h2 id="paymentTitle">
+      BZAT.ai Payment
+    </h2>
+
+    <p class="payment-subtitle">
+      Complete your payment for BZAT.ai credits.
+    </p>
+
+
+    <div class="selected-plan">
+
+      <strong id="selectedPlan"></strong>
+
+      <br>
+
+      <span id="selectedCredits"></span>
+
+    </div>
+
+
+    <!-- BANK -->
+
+    <div class="payment-method">
+
+      <h3>
+        🏦 Bank Transfer
+      </h3>
+
+      <p>
+        Transfer the exact plan amount to:
+      </p>
+
+      <div class="detail-row">
+
+        <div
+          class="detail"
+          id="iban"
+        >
+          PK44ALFH0662001009771444
+        </div>
+
+        <button
+          class="copy-btn"
+          type="button"
+          onclick="copyDetail('iban')"
+        >
+          Copy
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- JAZZCASH -->
+
+    <div class="payment-method">
+
+      <h3>
+        📱 JazzCash
+      </h3>
+
+      <p>
+        Send the exact plan amount to:
+      </p>
+
+      <div class="detail-row">
+
+        <div
+          class="detail"
+          id="jazzcash"
+        >
+          923227861675
+        </div>
+
+        <button
+          class="copy-btn"
+          type="button"
+          onclick="copyDetail('jazzcash')"
+        >
+          Copy
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="note">
+
+      After making the payment, keep your
+      transaction/reference number.
+
+      BZAT.ai credits should only be activated
+      after payment is manually verified.
+
+    </div>
+
+
+    <label for="transactionId">
+      Transaction / Reference ID
+    </label>
+
+    <input
+      id="transactionId"
+      type="text"
+      placeholder="Enter your transaction ID"
+      autocomplete="off"
+    >
+
+
+    <label for="paymentProof">
+      Payment Proof
+    </label>
+
+    <input
+      id="paymentProof"
+      type="file"
+      accept="image/*,.pdf"
+    >
+
+
+    <button
+      type="button"
+      onclick="submitPaymentRequest()"
+    >
+      📤 Submit Payment Details
+    </button>
+
+
+    <div
+      class="status"
+      id="paymentStatus"
+      aria-live="polite"
+    ></div>
+
+
+    <button
+      class="close-btn"
+      type="button"
+      onclick="closePayment()"
+    >
+      Close
+    </button>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <div class="footer-links">
+
+    <a href="#about">About</a>
+
+    <a href="#features">Features</a>
+
+    <a href="#pricing">Pricing</a>
+
+    <a href="#faq">FAQ</a>
+
+  </div>
+
+  <p>
+    © 2026 BZAT.ai — Create Once. Publish Everywhere.
+  </p>
+
+</footer>
+
+
+<script>
+
+/* =========================================
+   AI CONTENT GENERATOR
+========================================= */
+
+async function generateContent() {
+
+  const topic =
+    document.getElementById("topic").value.trim();
+
+  const platform =
+    document.getElementById("platform").value;
+
+  const style =
+    document.getElementById("style").value;
+
+  const duration =
+    document.getElementById("duration").value;
+
+  const button =
+    document.getElementById("generateButton");
+
+
+  if (!topic) {
+
+    alert("Please enter a topic first.");
+
+    document.getElementById("topic").focus();
+
+    return;
+
+  }
+
+
+  button.disabled = true;
+
+  button.textContent =
+    "⏳ Creating...";
+
 
   try {
+
     const response = await fetch(
-      "https://bzat82912.bzat-ads.workers.dev",
+      "https://bzat-ai-api-2.bzat-ads.workers.dev",
       {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json"
         },
+
         body: JSON.stringify({
-          prompt:
-            "Create a high-quality content package from this idea. Include a title, engaging article/post, social media captions, and a short video script. Idea: " +
-            idea
+          topic: topic,
+          platform: platform,
+          style: style,
+          duration: duration
         })
       }
     );
 
-    const data = await response.json();
 
-    if (!response.ok) {
+    const data =
+      await response.json();
+
+
+    if (!response.ok || !data.success) {
+
       throw new Error(
-  typeof data.error === "string"
-    ? data.error
-    : JSON.stringify(data.error)
-);
+        data.error ||
+        "AI request failed."
+      );
+
     }
 
-    const text =
-      data.candidates?.[0]?.content?.parts?.[0]?.text;
 
-    if (!text) {
-      throw new Error("No AI response received.");
-    }
+    document.getElementById(
+      "result"
+    ).style.display = "block";
 
-    output.innerHTML = text.replace(/\n/g, "<br>");
+
+    document.getElementById(
+      "hook"
+    ).textContent =
+      data.hook || "";
+
+
+    document.getElementById(
+      "script"
+    ).textContent =
+      data.script || "";
+
+
+    document.getElementById(
+      "onscreen"
+    ).textContent =
+      data.onscreen || "";
+
+
+    document.getElementById(
+      "caption"
+    ).textContent =
+      data.caption || "";
+
+
+    document.getElementById(
+      "hashtags"
+    ).textContent =
+      data.hashtags || "";
+
+
+    document.getElementById(
+      "prompt"
+    ).textContent =
+      data.videoPrompt || "";
+
+
+    document.getElementById(
+      "result"
+    ).scrollIntoView({
+      behavior: "smooth"
+    });
+
+
   } catch (error) {
-    output.innerHTML =
-      "❌ BZAT AI Error: " + error.message;
+
+    alert(
+      "Something went wrong: " +
+      error.message
+    );
+
+  } finally {
+
+    button.disabled = false;
+
+    button.textContent =
+      "✨ Generate Video Package";
+
   }
+
 }
+
+
+/* =========================================
+   START FREE
+========================================= */
+
+function startFree() {
+
+  document
+    .getElementById("generator")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+
+
+  setTimeout(function() {
+
+    document
+      .getElementById("topic")
+      .focus();
+
+  }, 500);
+
+}
+
+
+/* =========================================
+   PAYMENT
+========================================= */
+
+function openPayment(
+  plan,
+  credits,
+  price
+) {
+
+  document.getElementById(
+    "selectedPlan"
+  ).textContent =
+    plan + " — " + price;
+
+
+  document.getElementById(
+    "selectedCredits"
+  ).textContent =
+    credits;
+
+
+  document.getElementById(
+    "paymentStatus"
+  ).style.display =
+    "none";
+
+
+  document.getElementById(
+    "paymentStatus"
+  ).textContent =
+    "";
+
+
+  document.getElementById(
+    "paymentModal"
+  ).style.display =
+    "flex";
+
+}
+
+
+function closePayment() {
+
+  document.getElementById(
+    "paymentModal"
+  ).style.display =
+    "none";
+
+}
+
+
+/* =========================================
+   COPY BANK/JAZZCASH DETAILS
+========================================= */
+
+async function copyDetail(id) {
+
+  const text =
+    document.getElementById(id).textContent.trim();
+
+
+  if (
+    text === "YOUR_IBAN_HERE" ||
+    text === "YOUR_JAZZCASH_NUMBER_HERE"
+  ) {
+
+    alert(
+      "Please add your payment details first."
+    );
+
+    return;
+
+  }
+
+
+  try {
+
+    await navigator.clipboard.writeText(text);
+
+    alert("Copied!");
+
+  } catch (error) {
+
+    alert(
+      "Please copy the details manually."
+    );
+
+  }
+
+}
+
+
+/* =========================================
+   PAYMENT REQUEST
+========================================= */
+
+function submitPaymentRequest() {
+
+  const transactionId =
+    document
+      .getElementById("transactionId")
+      .value.trim();
+
+  const proof =
+    document
+      .getElementById("paymentProof")
+      .files[0];
+
+  const status =
+    document.getElementById(
+      "paymentStatus"
+    );
+
+
+  if (!transactionId) {
+
+    alert(
+      "Please enter your transaction/reference ID."
+    );
+
+    return;
+
+  }
+
+
+  if (!proof) {
+
+    alert(
+      "Please select your payment proof."
+    );
+
+    return;
+
+  }
+
+
+  status.style.display =
+    "block";
+
+
+  status.textContent =
+    "Payment details received on this device. Manual verification is required before credits can be activated.";
+
+}
+
+
+/* =========================================
+   CLOSE MODAL OUTSIDE
+========================================= */
+
+window.addEventListener(
+  "click",
+  function(event) {
+
+    const modal =
+      document.getElementById(
+        "paymentModal"
+      );
+
+
+    if (event.target === modal) {
+
+      closePayment();
+
+    }
+
+  }
+);
+
 </script>
+
 </body>
 </html>
